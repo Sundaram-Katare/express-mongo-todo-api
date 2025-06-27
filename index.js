@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require('cors'); // Installed cors using 'npm i cors' command.
+
 const app = express();
 
  //good practice to load confirg from env file
@@ -8,6 +10,7 @@ const app = express();
   
  //middleware to parsejson request body
  app.use(express.json());
+ app.use(cors()); // This will avoid cors error.
 
  //import routes for TODO API
  const todoRoutes = require("./routes/todo");
